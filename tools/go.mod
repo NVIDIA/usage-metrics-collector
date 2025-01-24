@@ -6,7 +6,7 @@ require (
 	github.com/golangci/golangci-lint v1.50.1
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.15.0
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.2.0
-	google.golang.org/protobuf v1.28.1
+	google.golang.org/protobuf v1.33.0
 	sigs.k8s.io/controller-tools v0.11.1
 	sigs.k8s.io/kustomize/kustomize/v4 v4.5.7
 )
