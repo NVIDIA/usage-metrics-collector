@@ -24,16 +24,23 @@ jobs:
             exit 1
           fi
 
-      - name: Build
-        run: |
-          cd cmd/container-monitor
-          go mod tidy
-          go build .
+      - name: Tidy
+        run: go mod tidy
+
+      - name: Build x64
+        working-directory: cmd/container-monitor
+        run: GOOS=linux GOARCH=amd64 go build -o container-monitor-linux-amd64 .
+
+      - name: Build arm64
+        working-directory: cmd/container-monitor
+        run: GOOS=linux GOARCH=arm64 go build -o container-monitor-linux-arm64 .
 
       - name: Release container-monitor ${{ github.ref_name }}
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
-          files: cmd/container-monitor/container-monitor
+          files: |
+            cmd/container-monitor/container-monitor-linux-amd64
+            cmd/container-monitor/container-monitor-linux-arm64
           token: ${{ secrets.GITHUB_TOKEN }}
