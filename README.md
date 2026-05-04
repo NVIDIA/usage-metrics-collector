@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> As of 05/04/2026 this project has been deprecated. This fork of usage-metrics-collector is not maintained anymore. NVIDIA recommends that new projects adopt the [upstream repository](https://github.com/kubernetes-sigs/usage-metrics-collector.git).
+
+
 # Usage Metrics Collector
 
 The usage-metrics-collector is a Prometheus metrics collector optimized for collecting kube usage and
